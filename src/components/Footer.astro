@@ -1,0 +1,28 @@
+---
+import Social from './Social.astro';
+
+const socialMedia = [
+  { platform: "github", username: "marlon-torres-bts" },
+  { platform: "linkedin", username: "in/marlon-torres-914ab9127" },
+  { platform: "youtube", username: "channel/UCtJ36OtZAmp4hmKzfU2OIGA" },
+]
+
+const platform = "github";
+const username = "withastro";
+---
+
+<footer>
+  <p>Learn more about my projects on:
+    { socialMedia.map(({ platform, username }) => (
+      <Social platform={platform} username={username} />
+    )) }
+  </p>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
